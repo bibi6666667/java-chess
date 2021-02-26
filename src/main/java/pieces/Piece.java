@@ -2,7 +2,7 @@ package pieces;
 
 public class Piece {
     public enum Color {
-        WHITE("white"), BLACK("black"), NO_COLOR(" ");
+        WHITE("white"), BLACK("black"), NO_COLOR("");
 
         private final String color;
 
@@ -17,7 +17,7 @@ public class Piece {
 
     public enum Type {
         PAWN('p'), ROOK('r'), KNIGHT('n'), BISHOP('b'),
-        QUEEN('q'), KING('k'), NO_PIECE(' ');
+        QUEEN('q'), KING('k'), NO_PIECE('.');
 
         private final char symbol;
 
@@ -118,6 +118,10 @@ public class Piece {
 
     public static Piece createBlackKing() {
         return new Piece(Type.KING, Color.BLACK);
+    }
+
+    public static Piece createBlank() {
+        return new Piece(Type.NO_PIECE, Color.NO_COLOR);
     }
 
     public Type getType() {
