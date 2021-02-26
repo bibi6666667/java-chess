@@ -56,81 +56,76 @@ public class Piece {
     public static final char BLACK_QUEEN_SYMBOL = 'Q';
     public static final char BLACK_KING_SYMBOL = 'K';
 
-    private final String name;
-    private final String color;
-    private final char symbol;
+    private final Type type;
+    private final Color color;
 
-    private Piece(String name, String color, char symbol) {
-        this.name = name;
+    private Piece(Type type, Color color) {
+        this.type = type;
         this.color = color;
-        this.symbol = symbol;
     }
 
     boolean isWhite() {
-        return color.equals(Piece.WHITE);
+        return color.equals(Color.WHITE);
     }
 
     boolean isBlack() {
-        return color.equals(Piece.BLACK);
+        return color.equals(Color.BLACK);
     }
 
     public static Piece createWhitePawn() {
-        return new Piece(PAWN, WHITE, WHITE_PAWN_SYMBOL);
+        return new Piece(Type.PAWN, Color.WHITE);
     }
 
     public static Piece createBlackPawn() {
-        return new Piece(PAWN, BLACK, BLACK_PAWN_SYMBOL);
+        return new Piece(Type.PAWN, Color.BLACK);
     }
 
     public static Piece createWhiteKnight() {
-        return new Piece(KNIGHT, WHITE, WHITE_KNIGHT_SYMBOL);
+        return new Piece(Type.KNIGHT, Color.WHITE);
     }
 
     public static Piece createBlackKnight() {
-        return new Piece(KNIGHT, BLACK, BLACK_KNIGHT_SYMBOL);
+        return new Piece(Type.KNIGHT, Color.BLACK);
     }
 
     public static Piece createWhiteRook() {
-        return new Piece(ROOK, WHITE, WHITE_ROOK_SYMBOL);
+        return new Piece(Type.ROOK, Color.WHITE);
     }
 
     public static Piece createBlackRook() {
-        return new Piece(ROOK, BLACK, BLACK_ROOK_SYMBOL);
+        return new Piece(Type.ROOK, Color.BLACK);
     }
 
     public static Piece createWhiteBishop() {
-        return new Piece(BISHOP, WHITE, WHITE_BISHOP_SYMBOL);
+        return new Piece(Type.BISHOP, Color.WHITE);
     }
 
     public static Piece createBlackBishop() {
-        return new Piece(BISHOP, BLACK, BLACK_BISHOP_SYMBOL);
+        return new Piece(Type.BISHOP, Color.BLACK);
     }
 
     public static Piece createWhiteQueen() {
-        return new Piece(QUEEN, WHITE, WHITE_QUEEN_SYMBOL);
+        return new Piece(Type.QUEEN, Color.WHITE);
     }
 
     public static Piece createBlackQueen() {
-        return new Piece(QUEEN, BLACK, BLACK_QUEEN_SYMBOL);
+        return new Piece(Type.QUEEN, Color.BLACK);
     }
 
     public static Piece createWhiteKing() {
-        return new Piece(KING, WHITE, WHITE_KING_SYMBOL);
+        return new Piece(Type.KING, Color.WHITE);
     }
 
     public static Piece createBlackKing() {
-        return new Piece(KING, BLACK, BLACK_KING_SYMBOL);
+        return new Piece(Type.KING, Color.BLACK);
     }
 
-    public String getName() {
-        return name;
+    public Type getType() {
+        return type;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public char getSymbol() {
-        return symbol;
-    }
 }

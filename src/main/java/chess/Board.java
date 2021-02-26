@@ -14,25 +14,25 @@ public class Board {
     private List<Piece> blackOthers = new ArrayList<>(BOARD_SIZE);
 
     public void addWhitePawn(Piece piece) {
-        if (piece.getName().equals(Piece.PAWN) && piece.getColor().equals(Piece.WHITE)) {
+        if (piece.getType().equals(Piece.Type.PAWN) && piece.getColor().equals(Piece.Color.WHITE)) {
             whitePawns.add(piece);
         }
     }
 
-    public void addBlackPawn(Piece piece) {
-        if (piece.getName().equals(Piece.PAWN) && piece.getColor().equals(Piece.BLACK)) {
-            blackPawns.add(piece);
-        }
-    }
-
     public void addWhiteOther(Piece piece) {
-        if (!piece.getName().equals(Piece.PAWN) && piece.getColor().equals(Piece.WHITE)) {
+        if (!piece.getType().equals(Piece.Type.PAWN) && piece.getColor().equals(Piece.Color.WHITE)) {
             whiteOthers.add(piece);
         }
     }
 
+    public void addBlackPawn(Piece piece) {
+        if (piece.getType().equals(Piece.Type.PAWN) && piece.getColor().equals(Piece.Color.BLACK)) {
+            blackPawns.add(piece);
+        }
+    }
+
     public void addBlackOther(Piece piece) {
-        if (!piece.getName().equals(Piece.PAWN) && piece.getColor().equals(Piece.BLACK)) {
+        if (!piece.getType().equals(Piece.Type.PAWN) && piece.getColor().equals(Piece.Color.BLACK)) {
             blackOthers.add(piece);
         }
     }
@@ -95,25 +95,32 @@ public class Board {
     }
 
     public String getWhitePawnsResult() {
-        return getPawnsResult(whitePawns);
-    }
-
-    public String getBlackPawnsResult() {
-        return getPawnsResult(blackPawns);
+        return getWhitesResult(whitePawns);
     }
 
     public String getWhiteOthersResult() {
-        return getPawnsResult(whiteOthers);
+        return getWhitesResult(whiteOthers);
+    }
+
+    public String getBlackPawnsResult() {
+        return getBlacksResult(blackPawns);
     }
 
     public String getBlackOthersResult() {
-        return getPawnsResult(blackOthers);
+        return getBlacksResult(blackOthers);
     }
 
-    private String getPawnsResult(List<Piece> pieces) {
+    private String getWhitesResult(List<Piece> pieces) {
         StringBuilder sb = new StringBuilder();
         for (Piece aPiece : pieces) {
-            sb.append(aPiece.getSymbol());
+            sb.append(aPiece.getType().getWhiteSymbol());
+        }
+        return sb.toString();
+    }
+    private String getBlacksResult(List<Piece> pieces) {
+        StringBuilder sb = new StringBuilder();
+        for (Piece aPiece : pieces) {
+            sb.append(aPiece.getType().getBlackSymbol());
         }
         return sb.toString();
     }
