@@ -8,10 +8,16 @@ import static utils.StringUtils.appendNewLine;
 
 public class Board {
     private static int BOARD_SIZE = 8;
+    private List<Rank> board = new ArrayList<>(BOARD_SIZE);
     private List<Piece> whitePawns = new ArrayList<>(BOARD_SIZE);
     private List<Piece> whiteOthers = new ArrayList<>(BOARD_SIZE);
     private List<Piece> blackPawns = new ArrayList<>(BOARD_SIZE);
     private List<Piece> blackOthers = new ArrayList<>(BOARD_SIZE);
+
+    public void addPiece(Piece piece, int rankNum, int fileNum) {
+        Rank rankToPutIn = board.get(BOARD_SIZE - rankNum);
+        rankToPutIn.rank.add(fileNum - 1, piece);
+    }
 
     public void addWhitePawn(Piece piece) {
         if (piece.getType().equals(Piece.Type.PAWN) && piece.getColor().equals(Piece.Color.WHITE)) {

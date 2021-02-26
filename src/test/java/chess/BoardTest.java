@@ -56,4 +56,12 @@ class BoardTest {
         board.addWhitePawn(blackPawn);
         assertThat(board.getWhitePawnsSize()).isEqualTo(0);
     }
+
+    @Test
+    @DisplayName("Board에 추가된 말 확인")
+    void addPiece() {
+        Piece whiteKing = Piece.createWhiteKing();
+        board.addPiece(whiteKing, 1, 5);
+
+    }
 }
