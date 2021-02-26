@@ -33,28 +33,6 @@ public class Piece {
             return Character.toUpperCase(symbol);
         }
     }
-    public static final String WHITE = "white";
-    public static final String BLACK = "black";
-
-    public static final String PAWN = "pawn";
-    public static final String KNIGHT = "knight";
-    public static final String ROOK = "rook";
-    public static final String BISHOP = "bishop";
-    public static final String QUEEN = "queen";
-    public static final String KING = "king";
-
-    public static final char WHITE_PAWN_SYMBOL = 'p';
-    public static final char WHITE_KNIGHT_SYMBOL = 'n';
-    public static final char WHITE_ROOK_SYMBOL = 'r';
-    public static final char WHITE_BISHOP_SYMBOL = 'b';
-    public static final char WHITE_QUEEN_SYMBOL = 'q';
-    public static final char WHITE_KING_SYMBOL = 'k';
-    public static final char BLACK_PAWN_SYMBOL = 'P';
-    public static final char BLACK_KNIGHT_SYMBOL = 'N';
-    public static final char BLACK_ROOK_SYMBOL = 'R';
-    public static final char BLACK_BISHOP_SYMBOL = 'B';
-    public static final char BLACK_QUEEN_SYMBOL = 'Q';
-    public static final char BLACK_KING_SYMBOL = 'K';
 
     private final Type type;
     private final Color color;
