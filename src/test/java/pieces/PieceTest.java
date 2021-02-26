@@ -64,4 +64,11 @@ public class PieceTest {
         assertThat(blackPiece.isWhite()).isEqualTo(false);
     }
 
+    @Test
+    @DisplayName("기물에 맞는 기호를 가져오기")
+    public void getSymbolPerPiece() {
+        assertThat(Piece.Type.PAWN.getWhiteSymbol()).isEqualTo('p');
+        assertThat(Piece.Type.PAWN.getBlackSymbol()).isEqualTo('P');
+    }
+
 }
