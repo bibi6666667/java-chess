@@ -1,6 +1,38 @@
 package pieces;
 
 public class Piece {
+    public enum Color {
+        WHITE("white"), BLACK("black"), NO_COLOR(" ");
+
+        private final String color;
+
+        Color(String color) {
+            this.color = color;
+        }
+
+        public String getColor() {
+            return color;
+        }
+    }
+
+    public enum Type {
+        PAWN('p'), ROOK('r'), KNIGHT('n'), BISHOP('b'),
+        QUEEN('q'), KING('k'), NO_PIECE(' ');
+
+        private final char symbol;
+
+        Type(char symbol) {
+            this.symbol = symbol;
+        }
+
+        public char getWhiteSymbol() {
+            return symbol;
+        }
+
+        public char getBlackSymbol() {
+            return Character.toUpperCase(symbol);
+        }
+    }
     public static final String WHITE = "white";
     public static final String BLACK = "black";
 
